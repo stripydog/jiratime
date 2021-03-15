@@ -6,7 +6,8 @@ It was created when the author discovered there was no apparent way to create
 a timesheet from the Jira cloud platform's web GUI.  It may or may not work
 for you.
 
-## Building
+## Building
+
 ```bash
 go build jiratime.go
 ```
@@ -19,31 +20,31 @@ jiratime [ -config <filename>] [-user <username>] [-format <output_format>]
 ```
 
 ### Options
--config <filename>
+-config \<filename>  
     Configuration file to use.  By default this is jiratime.json, located in
     $HOME/Library/Application Support on MacOS, $XDG_CONFIG_HOME if defined
     or $HOME/.config otherwise on Linux
 
--user <username>
+-user \<username>  
     Email address of the user to retrieve work times for.  Defaults to the
     user running the query
 
--format <output_format>
+-format \<output_format>  
     How to display output.  Options are:
     * text : Simple text
     * json : JSON
     * indent : indented JSON
     * csv : Comma separated values
 
--start <YYYY-MM-DD>
+-start \<YYYY-MM-DD>    
     Only report time in worklogs started on or after this day in the user's
     Time Zone
 
--end <YYYY-MM-DD>
+-end \<YYYY-MM-DD>  
     Only report time in worklogs starting on or before this day in the user's
     Time Zone
 
-### Configuration file
+## Configuration file
 The configuration file should be a json-formatted file specifying:
 * "baseurl"  : https://<your-domain>.atlassian.net
 * "username" : email address of the user to perform the query as
@@ -56,7 +57,7 @@ For example:
 ```json
 {
     "baseurl" : "https://example.atlassian.net",
-    "username" : alice@example.com,
+    "username" : "alice@example.com",
     "userkey" : "ABCDefGHIjKlMn123456789Z",
     "workers" : 10
 }
